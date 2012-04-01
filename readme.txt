@@ -18,7 +18,7 @@ ATbar is an accessibility toolbar which can be added to a user's browser or alte
 
 http://www.atbar.org
 
-ATbar is a cross browser accessibility toolbar which can be added to a user's browser or alternatively, for developers, the toolbar launcher can be embedded on a website.
+ATbar is a cross browser accessibility toolbar which can be added to a user's browser or alternatively, for developers, the toolbar launcher can be embedded on a website. The toolbar is available in both English and Arabic.
 
 The ATbar offers a collection of user preferences for interacting with websites such as text enlargement, increased line spacing, font, style and size changes with the options of different background colours and accessible webpages (Wordpress is accessible). There is an option to use a dictionary, text-to-speech and spell checking.
 
