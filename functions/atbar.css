@@ -2,7 +2,8 @@
 	position: absolute;
 	padding: 0;
 	top: -3px;
-	left: 50%;
+	left: 48.5%;
+	z-index: 9999;
 }
 
 #toolbar-launch img {
@@ -10,11 +11,16 @@
 	opacity: 0.6;
 }
 
+#toolbar-widget {
+	text-align: center;
+}
+
 #toolbar-widget a{
 	position: static;
 	padding: 0;
 	top: 0;
 	left: 0;
+	text-align: center;
 }
 
 #toolbar-widget img {

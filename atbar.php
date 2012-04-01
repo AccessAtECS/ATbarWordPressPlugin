@@ -3,7 +3,7 @@
 Plugin Name: ATbar
 Plugin URI: http://www.atbar.org
 Description: ATbar is a cross browser accessibility toolbar which can be added to a user's browser or alternatively, for developers, the toolbar launcher can be embedded on a website.
-Version: 1.2
+Version: 1.2.3
 Author: Magnus White
 Author Email: mpw@ecs.soton.ac.uk
 Author URI: http://access.ecs.soton.ac.uk
@@ -28,4 +28,3 @@ add_action('the_post', 'add_toolbar');
 // adds ATbar widget
 add_action("plugins_loaded", "atbar_widget_init");
 ?>
-
