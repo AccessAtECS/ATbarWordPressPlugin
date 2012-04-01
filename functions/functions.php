@@ -99,14 +99,14 @@ function exclude_pages() {
 	if($exclude_option == "on") {
 	
 		if(in_array($postid, $array)) {			
-			add_action('get_footer', 'persistentlaunch');
+			add_action('get_footer', 'toolbarlauncher');
 		}
 		else {
-			add_action('get_footer', 'toolbarlauncher');
+			add_action('get_footer', 'persistentlaunch');
 		}
 	}
 	else {
-		add_action('get_footer', 'toolbarlauncher');
+		add_action('get_footer', 'persistentlaunch');
 	}
 }
 
@@ -135,6 +135,4 @@ function atbar_widget(){
 	
 	echo '<div id="toolbar-widget">'.$toolbar.'</div>';
 }
-
-
 ?>

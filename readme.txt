@@ -5,10 +5,10 @@ Plugin URI: http://www.atbar.org
 Author: Magnus White
 Contributors: magnuspwhite
 Tags: atbar, accessibility, disability, assistive technology, toolbar, personal preferences
-Version: 1.2
+Version: 1.2.1
 Requires at least: 2.1
 Tested up to: 3.2.1
-Stable tag: 1.2
+Stable tag: 1.2.1
 
 
 
@@ -53,22 +53,23 @@ If you have any questions please contact us at http://www.atbar.org/contact
 
 == Screenshots ==
 
-1. screenshot-1.png
-2. screenshot-2.png
-3. screenshot-3.png
-4. screenshot-4.png
-5. screenshot-5.png
-6. screenshot-6.png
-7. screenshot-7.png
-8. screenshot-10.png
-9. screenshot-11.png
+1. screenshot-3.png
+2. screenshot-4.png
+3. screenshot-5.png
+4. screenshot-6.png
+5. screenshot-7.png
+6. screenshot-10.png
+7. screenshot-11.png
 
 
 == Changelog ==
 
+= 1.2.1 =
+*  Bug fix - toolbar not loading in specific theme
+
 = 1.2 =
 *  ATbar sidebar widget added
-* The option to turn off launcher images at the top of the page (mainly for use when using the widget)
+*  The option to turn off launcher images at the top of the page (mainly for use when using the widget)
 
 
 = 1.1.2 =

@@ -94,4 +94,3 @@ function atbar_options()
 }
 
 ?>
-
