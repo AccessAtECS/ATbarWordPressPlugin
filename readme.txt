@@ -2,13 +2,13 @@
 Plugin Name: ATbar
 Author URI: http://access.ecs.soton.ac.uk
 Plugin URI: http://www.atbar.org
-Author: Magnus White
+Author: Magnus P White
 Contributors: magnuspwhite
 Tags: atbar, accessibility, disability, assistive technology, toolbar, personal preferences
-Version: 2.0
+Version: 2.1
 Requires at least: 2.1
 Tested up to: 3.2.1
-Stable tag: 2.0
+Stable tag: 2.1
 
 
 
@@ -18,7 +18,6 @@ ATbar is an accessibility toolbar which can be added to a user's browser or alte
 
 http://www.atbar.org
 
-
 ATbar is a cross browser accessibility toolbar which can be added to a user's browser or alternatively, for developers, the toolbar launcher can be embedded on a website.
 
 The ATbar offers a collection of user preferences for interacting with websites such as text enlargement, increased line spacing, font, style and size changes with the options of different background colours and accessible webpages (Wordpress is accessible). There is an option to use a dictionary, text-to-speech and spell checking.
@@ -26,7 +25,6 @@ The ATbar offers a collection of user preferences for interacting with websites 
 If you wish to create your own version of the toolbar with different features, go to http://marketplace.atbar.org
 
 Developed by the ECS Accessibility Team at the University of Southampton.
-
 
 
 - Licensed under the BSD Licence.
@@ -58,6 +56,9 @@ Visit: http://www.atbar.org/contact
 
 
 == Changelog ==
+
+= 2.1 =
+*  Supports Arabic
 
 = 2.0 =
 *  Uses ATbar 2.0 - now at http://www.atbar.org

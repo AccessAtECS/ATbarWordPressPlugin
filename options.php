@@ -3,6 +3,7 @@
 function atbar_options()
 {
 	
+	$language_option = get_option('atbar_language');
 	$persistent_option = get_option('atbar_persistent');
 	$exclude_option = get_option('atbar_exclude');
 	$exclude_pages_option = get_option('atbar_exclude_pages');
@@ -16,8 +17,22 @@ function atbar_options()
 	<form method="post" action="options.php">');
 	settings_fields('atbar_options');
 	
+	//select language
 	echo ('
 	<table class="form-table">
+				<tr valign="top">
+			<th scope="row">Select language:</th>
+			<td>
+				<select name="atbar_language" width="60px">
+					<option value="en" ');
+												echo is_language("en");	echo ('>English</option>
+					<option value="ar" '); echo is_language("ar");	echo ('>Arabic</option>
+				</select>
+			</td>
+		</tr>');
+	
+	//load Atbar at top of page
+	echo ('	
 		<tr valign="top">
 			<th scope="row">Load ATbar launcher at the top of the page? (select no for when using the ATbar widget)</th>
 			<td>
@@ -40,7 +55,8 @@ function atbar_options()
 				</td>
 			</tr>');
 		}
-			
+		
+		//persistent options
 		echo ('
 		<tr valign="top">
 			<th scope="row">Is ATbar persistant on all pages:</th>
@@ -57,13 +73,15 @@ function atbar_options()
 					<option value="Yes" '); echo is_persistent("Yes");	echo ('>Yes</option>
 				</select>
 			</td>
-		</tr>
-				
+		</tr>');
+		
+		//exclude pages
+		echo ('
 		<tr>
 			<th scope="row">Exclude pages?</th>
 			<td><input type="checkbox" name="atbar_exclude" lable="exclude pages" '); is_exclude();
 			
-			echo ('			
+		echo ('			
 			>Exclude pages</td>
 		</tr>
 				
@@ -72,8 +90,10 @@ function atbar_options()
 			<td><input type="text" name="atbar_exclude_pages" value="'.$exclude_pages_option.'" style="width:346px;">
 			<br />
 			Enter a comma-separated list of page IDs to exclude, e.g. 1,2,3</td>
-		</tr>	
+		</tr>	');
 		
+		//save changes
+		echo ('
 		<tr valign="top">
 			<th scope="row">
 				<p class="submit">
@@ -81,8 +101,10 @@ function atbar_options()
 				</p>
 			</th>
 		</tr>
-		</form>
+		</form>');
 		
+		
+		echo ('		
 		<br />
 		
 		<form method="post" action="options.php">');
