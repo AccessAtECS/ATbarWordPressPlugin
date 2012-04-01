@@ -5,10 +5,10 @@ Plugin URI: http://www.atbar.org
 Author: Magnus White
 Contributors: magnuspwhite
 Tags: atbar, accessibility, disability, assistive technology, toolbar, personal preferences
-Version: 1.2.2
+Version: 1.2.3
 Requires at least: 2.1
 Tested up to: 3.2.1
-Stable tag: 1.2.2
+Stable tag: 1.2.3
 
 
 
@@ -63,6 +63,10 @@ If you have any questions please contact us at http://www.atbar.org/contact
 
 
 == Changelog ==
+
+= 1.2.3 =
+*  Updated toolbar launcher - now at http://www.atbar.org
+*  Widget aligned center
 
 = 1.2.2 =
 *  Toolbar update

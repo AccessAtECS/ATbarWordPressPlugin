@@ -11,18 +11,19 @@
 	opacity: 0.6;
 }
 
+#toolbar-widget {
+	text-align: center;
+}
+
 #toolbar-widget a{
 	position: static;
 	padding: 0;
 	top: 0;
 	left: 0;
+	text-align: center;
 }
 
 #toolbar-widget img {
 	padding: 0;
 	opacity: 1;
-}
-
-#toolbar-holder {
-	padding-bottom: 20px;
 }
