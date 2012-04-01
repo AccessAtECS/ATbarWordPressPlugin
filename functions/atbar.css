@@ -2,7 +2,8 @@
 	position: absolute;
 	padding: 0;
 	top: -3px;
-	left: 50%;
+	left: 48.5%;
+	z-index: 9999;
 }
 
 #toolbar-launch img {
@@ -20,4 +21,8 @@
 #toolbar-widget img {
 	padding: 0;
 	opacity: 1;
+}
+
+#toolbar-holder {
+	padding-bottom: 20px;
 }

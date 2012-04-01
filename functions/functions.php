@@ -31,11 +31,11 @@ function toolbarlauncher() {
 	$toolbar = addslashes(file_get_contents(dirname(__FILE__).'/atbar-launcher.php'));
 	echo ('<script language="javascript">
 	
-	jQuery(document).ready( function(){
-				jQuery("body").prepend("' . $toolbar . '");
-			}
-
-			);	
+	toolbarholder = document.createElement("div");
+	toolbarholder.id = "toolbar-holder";
+	toolbarholder.innerHTML = "'.$toolbar.'";
+	document.body.insertBefore(toolbarholder, document.body.firstChild);
+	
 	</script>');
 }
 
