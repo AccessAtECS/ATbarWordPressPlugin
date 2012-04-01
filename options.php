@@ -6,6 +6,7 @@ function atbar_options()
 	$persistent_option = get_option('atbar_persistent');
 	$exclude_option = get_option('atbar_exclude');
 	$exclude_pages_option = get_option('atbar_exclude_pages');
+	$no_show_banner_top_option = get_option('atbar_no_show_banner_top');
 	
 	// display options page
 	echo ('<div class="wrap">
@@ -17,6 +18,30 @@ function atbar_options()
 	
 	echo ('
 	<table class="form-table">
+		<tr valign="top">
+			<th scope="row">Load ATbar launcher at the top of the page? (select yes for when using the ATbar widget)</th>
+			<td>
+				<select name="atbar_no_show_banner_top" width="60px">
+					<option value="No" ');	// checks whether no show banner top is yes or no
+											// sets drop down box to setting selected
+											echo banner_show("No");	echo ('>No</option>
+					<option value="Yes" '); echo banner_show("Yes");	echo ('>Yes</option>
+				</select>
+			</td>
+		</tr>');
+		
+		if ($no_show_banner_top_option == "No") {
+			echo ('
+			<tr valign="top">
+				<td>
+					<div class="error fade">
+					<p><b>ATbar launcher image at the top of the page is turned off.</b></p>
+					</div>
+				</td>
+			</tr>');
+		}
+			
+		echo ('
 		<tr valign="top">
 			<th scope="row">Is ATbar persistant on all pages:</th>
 			<td><b>'.$persistent_option.'</b></td>
