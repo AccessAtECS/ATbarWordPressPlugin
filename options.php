@@ -4,6 +4,8 @@ function atbar_options()
 {
 	
 	$persistent_option = get_option('atbar_persistent');
+	$exclude_option = get_option('atbar_exclude');
+	$exclude_pages_option = get_option('atbar_exclude_pages');
 	
 	// display options page
 	echo ('<div class="wrap">
@@ -16,18 +18,36 @@ function atbar_options()
 	echo ('
 	<table class="form-table">
 		<tr valign="top">
-			<th scope="row">Is ATbar persistent on all pages:</th>
+			<th scope="row">Is ATbar persistant on all pages:</th>
 			<td><b>'.$persistent_option.'</b></td>
 		</tr>
+		
 		<tr valign="top">
 			<th scope="row">Load ATbar on all pages?</th>
 			<td>
 				<select name="atbar_persistent" width="60px">
-					<option value="false">No</option>
-					<option value="true">Yes</option>
+					<option value="No" ');	// checks whether persistent option is yes or no
+											// sets drop down box to setting selected
+											echo is_persistent("No");	echo ('>No</option>
+					<option value="Yes" '); echo is_persistent("Yes");	echo ('>Yes</option>
 				</select>
 			</td>
 		</tr>
+				
+		<tr>
+			<th scope="row">Exclude pages?</th>
+			<td><input type="checkbox" name="atbar_exclude" lable="exclude pages" '); is_exclude();
+			
+			echo ('			
+			>Exclude pages</td>
+		</tr>
+				
+		<tr>
+			<td></td>
+			<td><input type="text" name="atbar_exclude_pages" value="'.$exclude_pages_option.'" style="width:346px;">
+			<br />
+			Enter a comma-separated list of page IDs to exclude, e.g. 1,2,3</td>
+		</tr>	
 		
 		<tr valign="top">
 			<th scope="row">

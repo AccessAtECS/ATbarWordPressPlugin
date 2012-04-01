@@ -5,10 +5,10 @@ Plugin URI: http://www.atbar.org
 Author: Magnus White
 Contributors: magnuspwhite
 Tags: atbar, accessibility, disability, assistive technology, toolbar, personal preferences
-Version: 1.0
+Version: 1.1
 Requires at least: 2.1
-Tested up to: 3.0
-Stable tag: 1.0
+Tested up to: 3.2.1
+Stable tag: 1.1
 
 
 
@@ -53,10 +53,14 @@ visit http://www.atbar.org/help
 5. screenshot-5.png
 6. screenshot-6.png
 7. screenshot-7.png
-8. screenshot-8.png
+8. screenshot-9.png
 
 
 == Changelog ==
+
+= 1.1 =
+*  Additional admin options - allows pages to be excluded when toolbar is persistent
+*  CSS loads with WordPress CSS
 
 = 1.0 =
 *  Stable release
