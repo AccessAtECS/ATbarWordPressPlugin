@@ -9,3 +9,15 @@
 	padding: 0;
 	opacity: 0.6;
 }
+
+#toolbar-widget a{
+	position: static;
+	padding: 0;
+	top: 0;
+	left: 0;
+}
+
+#toolbar-widget img {
+	padding: 0;
+	opacity: 1;
+}
