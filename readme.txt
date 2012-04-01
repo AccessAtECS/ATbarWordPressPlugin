@@ -5,10 +5,10 @@ Plugin URI: http://www.atbar.org
 Author: Magnus White
 Contributors: magnuspwhite
 Tags: atbar, accessibility, disability, assistive technology, toolbar, personal preferences
-Version: 1.1
+Version: 1.1.2
 Requires at least: 2.1
 Tested up to: 3.2.1
-Stable tag: 1.1
+Stable tag: 1.1.2
 
 
 
@@ -37,6 +37,16 @@ Developed by the ECS Accessibility Team at the University of Southampton.
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. To activate ATbar on each page select the ATbar logo in the top center of the page.
 
+
+=Known Issues=
+
+When the toolbar loads it does not load the funtions, only the toolbar image. This is being addressed in a new version of the toolbar called ATkit. Once complete it will semlessly replace the toolbar loaded from this plugin.
+
+This plugin does not contain the toolbar, only the means to load it.
+
+If you have any questions please contact us at http://www.atbar.org/contact
+
+
 == Frequently Asked Questions ==
 
 = A question that someone might have =
@@ -57,6 +67,10 @@ visit http://www.atbar.org/help
 
 
 == Changelog ==
+
+
+= 1.1.2 =
+*  CSS loading fix
 
 = 1.1 =
 *  Additional admin options - allows pages to be excluded when toolbar is persistent
