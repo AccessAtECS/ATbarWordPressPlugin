@@ -19,7 +19,7 @@ function atbar_options()
 	echo ('
 	<table class="form-table">
 		<tr valign="top">
-			<th scope="row">Load ATbar launcher at the top of the page? (select yes for when using the ATbar widget)</th>
+			<th scope="row">Load ATbar launcher at the top of the page? (select no for when using the ATbar widget)</th>
 			<td>
 				<select name="atbar_no_show_banner_top" width="60px">
 					<option value="No" ');	// checks whether no show banner top is yes or no
