@@ -9,10 +9,14 @@ function atbar_css() {
 
 function atbar_register_settings(){
 
+	register_setting('atbar_options', 'atbar_language');
 	register_setting('atbar_options', 'atbar_persistent');
 	register_setting('atbar_options', 'atbar_exclude');
 	register_setting('atbar_options', 'atbar_exclude_pages');
 	register_setting('atbar_options', 'atbar_no_show_banner_top');
+	
+	//default language setting is en
+	
 }
 
 function atbar_add_options(){
@@ -20,15 +24,45 @@ function atbar_add_options(){
 	add_options_page('Atbar', 'Atbar', 'manage_options', 'atbaroptions', 'atbar_options');
 }
 
-function persistentlaunch() {
+function is_language($value) {
 
-	$persistenttoolbar = file_get_contents(dirname(__FILE__).'/atbar-launcher.js');
-	echo ('<script language="javascript">'.$persistenttoolbar.'</script>');
+	$language_option = get_option('atbar_language');
+
+	if($language_option == $value) {
+		echo ("selected");
+	}
+}
+
+function persistentlaunch() {
+	
+	$language_option = get_option('atbar_language');
+	
+	$persistenttoolbar = file_get_contents(dirname(__FILE__).'/atbar-launcher-'.$language_option.'.js');
+	
+	switch ($language_option){
+
+		default:
+			echo ('<script language="javascript">');
+				file_get_contents(dirname(__FILE__).'/atbar-launcher-en.js');
+			echo ('</script>');
+		break;
+
+		case "en":
+			echo ('<script language="javascript">'.$persistenttoolbar.'</script>');
+		break;
+
+		case "ar":
+			echo ('<script language="javascript">'.$persistenttoolbar.'</script>');
+		break;
+	}
+
 }
 
 function toolbarlauncher() {
-
-	$toolbar = addslashes(file_get_contents(dirname(__FILE__).'/atbar-launcher.php'));
+	
+	$language_option = get_option('atbar_language');
+	
+	$toolbar = addslashes(file_get_contents(dirname(__FILE__).'/atbar-launcher-'.$language_option.'.php'));
 	echo ('<script language="javascript">
 
 	toolbarholder = document.createElement("div");
@@ -119,8 +153,17 @@ function banner_show($value) {
 	}
 }
 
-function atbar_widget_init(){
+function atbar_widget_init() {
 	register_sidebar_widget(__('ATbar'), 'add_atbar_widget');
+}
+
+function atbar_widget() {
+
+	$language_option = get_option('atbar_language');	
+	
+	$toolbar = file_get_contents(dirname(__FILE__).'/atbar-launcher-'.$language_option.'.php');
+	
+	echo '<div id="toolbar-widget">'.$toolbar.'</div>';	
 }
 
 function add_atbar_widget($args) {
@@ -130,9 +173,4 @@ function add_atbar_widget($args) {
   echo $after_widget;
 }
 
-function atbar_widget(){
-	$toolbar = file_get_contents(dirname(__FILE__).'/atbar-launcher.php');
-
-	echo '<div id="toolbar-widget">'.$toolbar.'</div>';
-}
 ?>
