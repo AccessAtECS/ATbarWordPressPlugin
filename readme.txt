@@ -38,6 +38,12 @@ Developed by the ECS Accessibility Team at the University of Southampton.
 
 == Frequently Asked Questions ==
 
+= ATbar Plugin Guide =
+
+The ATbar Plugin Guide has detailed information on how to set up the plugin as well as useful information about it's functions.
+
+Visit: http://www.atbar.org/wordpress-plugin-guide
+
 = A question that someone might have =
 
 Visit: http://www.atbar.org/contact
