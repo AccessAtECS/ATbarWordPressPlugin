@@ -33,9 +33,9 @@ function atbar_options()
 			<th scope="row">Select version:</th>
 			<td>
 				<select name="atbar_version">
-					<option value="marketplace"	<? echo is_version("marketplace");	?>>Toolbar from ATbar Marketplace</option>
 					<option value="en"	<? echo is_version("en"); ?>>English</option>
 					<option value="ar" <? echo is_version("ar"); ?>>Arabic</option>
+					<option value="marketplace"	<? echo is_version("marketplace");	?>>Toolbar from ATbar Marketplace</option>
 				</select>
 				
 				<p>Create your own toolbar at <a href="http://marketplace.atbar.org">http://marketplace.atbar.org</a> or use one of the pre-made toolbars.</p>

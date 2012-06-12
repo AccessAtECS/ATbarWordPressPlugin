@@ -16,7 +16,7 @@ function atbar_register_settings(){
 	register_setting('atbar_options', 'atbar_exclude_pages');
 	register_setting('atbar_options', 'atbar_launcher_exclude');
 	register_setting('atbar_options', 'atbar_launcher_exclude_pages');
-	register_setting('atbar_options', 'atbar_launcher_image');	
+	register_setting('atbar_options', 'atbar_launcher_image');
 
 }
 
@@ -183,45 +183,6 @@ function exclude_pages($setting, $pages, $function) {
 	else {
 		add_action('get_footer', $function);
 	}
-}
-
-
-function atbar_widget_init() {
-	register_sidebar_widget(__('ATbar'), 'add_atbar_widget');
-}
-
-function atbar_widget() {
-	
-	$version = get_option('atbar_version');
-	
-	switch ($version){
-
-		default:
-			$js = file_get_contents(dirname(__FILE__).'/atbar-launcher-en.js');
-		break;
-
-		case "en":
-			$js = file_get_contents(dirname(__FILE__).'/atbar-launcher-en.js');
-		break;
-
-		case "ar":
-			$js = file_get_contents(dirname(__FILE__).'/atbar-launcher-ar.js');
-		break;
-		
-		case "marketplace":
-			$js = get_option('atbar_marketplace_toolbar');
-		break;
-	}
-	
-	$launcher = '<a href="'.$js.'" id="toolbar-launch" title="Launch ATbar to adjust this webpage, have it read aloud and other functions."><img src="http://access.ecs.soton.ac.uk/ToolBar/content/toolbar/toolbarlauncher.png" alt="ATbar"></a>';
-	echo '<div id="toolbar-widget">'.$launcher.'</div>';	
-}
-
-function add_atbar_widget($args) {
-  extract($args);
-  echo $before_widget;
-  atbar_widget();
-  echo $after_widget;
 }
 
 ?>
