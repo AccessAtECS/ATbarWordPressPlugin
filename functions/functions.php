@@ -3,12 +3,10 @@
 // functions
 
 function atbar_css() {
-
 	echo ('<link rel="stylesheet" type="text/css" media="all" href="'.plugin_dir_url(__FILE__).'atbar.css">');
 }
 
 function atbar_register_settings(){
-
 	register_setting('atbar_options', 'atbar_version');
 	register_setting('atbar_options', 'atbar_marketplace_toolbar');
 	register_setting('atbar_options', 'atbar_persistent');
@@ -17,51 +15,36 @@ function atbar_register_settings(){
 	register_setting('atbar_options', 'atbar_launcher_exclude');
 	register_setting('atbar_options', 'atbar_launcher_exclude_pages');
 	register_setting('atbar_options', 'atbar_launcher_image');
-
+	register_setting('atbar_options', 'atbar_shortcode_align_option');
 }
 
 function atbar_add_options(){
-
 	add_options_page('Atbar', 'Atbar', 'manage_options', 'atbaroptions', 'atbar_options');
 }
 
 function is_version($value) {
-
 	$version = get_option('atbar_version');
-
-	if($version == $value) {
-		echo ("selected");
-	}
+	return ($version == $value) ? "selected" : "";
 }
 
 function is_persistent($value) {
-
 	$persistent_option = get_option('atbar_persistent');
+	return ($persistent_option == $value) ? "selected" : "";
+}
 
-	if($persistent_option == $value) {
-		echo ("selected");
-	}
+function is_sc_align($value) {
+	$align_option = get_option('atbar_shortcode_align_option');
+	return ($align_option == $value) ? "selected" : "";
 }
 
 function is_exclude($setting) {
-
 	$exclude_option = get_option($setting);
-
-	if($exclude_option == "on") {
-		echo ('checked');
-	}
-	else {
-		echo ('unchecked');
-	}
+	return ($exclude_option == "on") ? "checked" : "unchecked";
 }
 
 function is_banner_show($value) {
-
 	$launcher_image_option = get_option('atbar_launcher_image');
-
-	if($launcher_image_option == $value) {
-		echo ("selected");
-	}
+	return ($launcher_image_option == $value) ? "selected" : "";
 }
 
 function add_toolbar(){
@@ -77,9 +60,6 @@ function add_toolbar(){
 	elseif ($launcher_image_option == "Yes"){
 		exclude_pages('atbar_launcher_exclude', 'atbar_launcher_exclude_pages', 'toolbarlauncher');
 	}
-	else {
-	
-	}
 }
 
 function toolbarlauncher() {
@@ -89,9 +69,6 @@ function toolbarlauncher() {
 	switch ($version){
 
 		default:
-			$js = file_get_contents(dirname(__FILE__).'/atbar-launcher-en.js');
-		break;
-
 		case "en":
 			$js = file_get_contents(dirname(__FILE__).'/atbar-launcher-en.js');
 		break;
@@ -123,9 +100,6 @@ function persistentlaunch() {
 	switch ($version){
 
 		default:
-			$ptoolbar = file_get_contents(dirname(__FILE__).'/atbar-launcher-en.js');
-		break;
-
 		case "en":
 			$ptoolbar = file_get_contents(dirname(__FILE__).'/atbar-launcher-en.js');
 		break;
@@ -145,6 +119,34 @@ function persistentlaunch() {
 
 	echo ('<script language="javascript">'.$ptoolbar.'</script>');
 
+}
+
+function shortcode_launcher() {
+	
+	$version = get_option('atbar_version');
+	$align = get_option('atbar_shortcode_align_option');
+	
+	switch ($version){
+
+		default:
+		case "en":
+			$js = file_get_contents(dirname(__FILE__).'/atbar-launcher-en.js');
+		break;
+
+		case "ar":
+			$js = file_get_contents(dirname(__FILE__).'/atbar-launcher-ar.js');
+		break;
+		
+		case "marketplace":
+			$js = get_option('atbar_marketplace_toolbar');
+		break;
+	}
+	
+	$image = '<img src="http://access.ecs.soton.ac.uk/ToolBar/content/toolbar/toolbarlauncher.png" alt="ATbar">';
+	$url = '<a href="'.$js.'" id="toolbar-launch-shortcode" title="Launch ATbar to adjust this webpage, have it read aloud and other functions.">'.$image.'</a>';
+	$launcher = '<p style="text-align:'.$align.';">'.$url.'</p>';
+	
+	return $launcher;
 }
 
 function get_marketplace_toolbar($js) {
@@ -172,11 +174,7 @@ function exclude_pages($setting, $pages, $function) {
 	$exclude_option = get_option($setting);
 
 	if($exclude_option == "on") {
-
-		if(in_array($postid, $array)) {
-
-		}
-		else {
+		if(!in_array($postid, $array)) {
 			add_action('get_footer', $function);
 		}
 	}
@@ -184,5 +182,6 @@ function exclude_pages($setting, $pages, $function) {
 		add_action('get_footer', $function);
 	}
 }
+
 
 ?>

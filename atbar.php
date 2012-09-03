@@ -28,4 +28,7 @@ add_action('the_post', 'add_toolbar');
 
 // adds ATbar widget
 add_action( 'widgets_init', create_function( '', 'register_widget( "atbar_widget" );' ) );
+
+// add ATbar shortcode - type [atbar] (uses the same settings as the other launchers - edit in settings)
+add_shortcode('atbar','shortcode_launcher');
 ?>
