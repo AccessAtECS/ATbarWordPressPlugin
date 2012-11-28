@@ -8,7 +8,7 @@ Tags: atbar, accessibility, disability, assistive technology, toolbar, personal 
 Version: 3.2
 Requires at least: 2.1
 Tested up to: 3.4.1
-Stable tag: 3.2
+Stable tag: 3.3
 
 
 ATbar is an accessibility toolbar which can be added to a user's browser or alternatively the toolbar launcher can be embedded on a website.
@@ -57,6 +57,11 @@ Visit: http://www.atbar.org/contact
 4. screenshot-4.png
 
 == Changelog ==
+
+= 3.3 =
+*  Works fully with HTTPS
+*  Links for toolbar and image upgrade to HTTPS
+*  Automactially loads latest version of ATbar
 
 = 3.2 =
 *  Added shortcode - use [atbar] in posts and pages to put ATbar launcher there
