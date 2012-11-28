@@ -82,7 +82,7 @@ function toolbarlauncher() {
 		break;
 	}
 	
-	$launcher = '<a href="'.$js.'" id="toolbar-launch" title="Launch ATbar to adjust this webpage, have it read aloud and other functions."><img src="http://access.ecs.soton.ac.uk/ToolBar/content/toolbar/toolbarlauncher.png" alt="ATbar"></a>';
+	$launcher = '<a href="'.$js.'" id="toolbar-launch" title="Launch ATbar to adjust this webpage, have it read aloud and other functions."><img src="https://core.atbar.org/resources/img/launcher.png" alt="ATbar"></a>';
 	$launcher = addslashes($launcher);
 	
 	echo ('<script language="javascript">
@@ -142,7 +142,7 @@ function shortcode_launcher() {
 		break;
 	}
 	
-	$image = '<img src="http://access.ecs.soton.ac.uk/ToolBar/content/toolbar/toolbarlauncher.png" alt="ATbar">';
+	$image = '<img src="https://core.atbar.org/resources/img/launcher.png" alt="ATbar">';
 	$url = '<a href="'.$js.'" id="toolbar-launch-shortcode" title="Launch ATbar to adjust this webpage, have it read aloud and other functions.">'.$image.'</a>';
 	$launcher = '<p style="text-align:'.$align.';">'.$url.'</p>';
 	
