@@ -66,7 +66,7 @@ class ATbar_Widget extends WP_Widget{
 			break;
 		}
 		
-		$launcher = '<a href="'.$js.'" id="toolbar-launch" title="Launch ATbar to adjust this webpage, have it read aloud and other functions."><img src="https://core.atbar.org/resources/img/launcher.pngg" alt="ATbar"></a>';
+		$launcher = '<a href="'.$js.'" id="toolbar-launch" title="Launch ATbar to adjust this webpage, have it read aloud and other functions."><img src="https://core.atbar.org/resources/img/launcher.png" alt="ATbar"></a>';
 		echo '<div id="toolbar-widget">'.$launcher.'</div>';
 	}
 

@@ -5,10 +5,10 @@ Plugin URI: http://www.atbar.org
 Author: Magnus P White
 Contributors: magnuspwhite
 Tags: atbar, accessibility, disability, assistive technology, toolbar, personal preferences
-Version: 3.2
+Version: 3.3.1
 Requires at least: 2.1
 Tested up to: 3.4.1
-Stable tag: 3.3
+Stable tag: 3.3.1
 
 
 ATbar is an accessibility toolbar which can be added to a user's browser or alternatively the toolbar launcher can be embedded on a website.
@@ -57,6 +57,9 @@ Visit: http://www.atbar.org/contact
 4. screenshot-4.png
 
 == Changelog ==
+
+= 3.3.1 =
+*  Minor bug in widget class
 
 = 3.3 =
 *  Works fully with HTTPS
