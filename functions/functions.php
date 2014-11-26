@@ -3,7 +3,8 @@
 // functions
 
 function atbar_css() {
-	echo ('<link rel="stylesheet" type="text/css" media="all" href="'.plugin_dir_url(__FILE__).'atbar.css">');
+    
+    wp_enqueue_style('atbar', plugin_dir_url(__FILE__).'atbar.css">');
 }
 
 function atbar_register_settings(){
@@ -19,7 +20,7 @@ function atbar_register_settings(){
 }
 
 function atbar_add_options(){
-	add_options_page('Atbar', 'Atbar', 'manage_options', 'atbaroptions', 'atbar_options');
+	add_options_page('ATbar', 'ATbar', 'manage_options', 'atbaroptions', 'atbar_options');
 }
 
 function is_version($value) {
@@ -82,7 +83,7 @@ function toolbarlauncher() {
 		break;
 	}
 	
-	$launcher = '<a href="'.$js.'" id="toolbar-launch" title="Launch ATbar to adjust this webpage, have it read aloud and other functions."><img src="https://core.atbar.org/resources/img/launcher.png" alt="ATbar"></a>';
+	$launcher = '<a href="'.$js.'" id="toolbar-launch" title="'.__('Launch ATbar to adjust this webpage, have it read aloud and other functions.', 'atbar').'"><img src="https://core.atbar.org/resources/img/launcher.png" alt="ATbar"></a>';
 	$launcher = addslashes($launcher);
 	
 	echo ('<script language="javascript">
@@ -175,13 +176,17 @@ function exclude_pages($setting, $pages, $function) {
 
 	if($exclude_option == "on") {
 		if(!in_array($postid, $array)) {
-			add_action('get_footer', $function);
+			add_action('wp_footer', $function);
 		}
 	}
 	else {
-		add_action('get_footer', $function);
+		add_action('wp_footer', $function);
 	}
 }
+function atbar_plugin_setup() {
+    load_plugin_textdomain('atbar', false, dirname(plugin_basename(__FILE__)) . '/lang/');
+} // end atbar_plugin_setup
+
 
 
 ?>
