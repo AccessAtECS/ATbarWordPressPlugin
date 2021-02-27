@@ -6,7 +6,7 @@ class ATbar_Widget extends WP_Widget{
 		parent::__construct(
 	 		'atbar_widget',
 			'ATbar',
-			array('description' => __( 'ATbar launcher. Loads the selected version of ATbar (settings->ATbar)'),)
+			array('description' => __( 'ATbar launcher. Loads the selected version of ATbar (settings->ATbar)', 'atbar'),)
 		);
 	}
 
@@ -34,11 +34,11 @@ class ATbar_Widget extends WP_Widget{
 			$title = $instance['title'];
 		}
 		else{
-			$title = __( 'New title', 'text_domain');
+			$title = __( 'New title', 'atbar');
 		}
 		?>
 		<p>
-		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
+		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'atbar' ); ?></label> 
 		<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 		</p>
 		<?php 
@@ -66,7 +66,7 @@ class ATbar_Widget extends WP_Widget{
 			break;
 		}
 		
-		$launcher = '<a href="'.$js.'" id="toolbar-launch" title="Launch ATbar to adjust this webpage, have it read aloud and other functions."><img src="https://core.atbar.org/resources/img/launcher.png" alt="ATbar"></a>';
+		$launcher = '<a href="'.$js.'" id="toolbar-launch" title="'.__('Launch ATbar to adjust this webpage, have it read aloud and other functions.', 'atbar').'"><img src="https://core.atbar.org/resources/img/launcher.png" alt="ATbar"></a>';
 		echo '<div id="toolbar-widget">'.$launcher.'</div>';
 	}
 
